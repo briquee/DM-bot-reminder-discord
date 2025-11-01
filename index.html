@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RappelBot — Rappels en DM</title>
+  <meta name="description" content="RappelBot — bot Discord qui envoie des rappels en DM. Page d'information, commandes, Terms of Service et Privacy Policy.">
+  <style>
+    :root{--bg:#0f1724;--card:#111827;--muted:#9ca3af;--accent:#7dd3fc}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#031024 0%, #071029 100%); color:#e6eef8;line-height:1.5}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;backdrop-filter: blur(6px)}
+    .logo{font-weight:700;letter-spacing:0.4px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px}
+    .container{max-width:980px;margin:24px auto;padding:20px}
+    .hero{background:linear-gradient(90deg, rgba(125,211,252,0.06), rgba(99,102,241,0.03));border-radius:12px;padding:26px}
+    h1{margin:0 0 6px 0;font-size:26px}
+    p.lead{color:var(--muted);margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:18px}
+    .card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    code{background:#0b1220;padding:4px 6px;border-radius:6px;font-family:monospace;color:#7dd3fc}
+    pre{white-space:pre-wrap;background:#041226;padding:12px;border-radius:8px;overflow:auto}
+    section{margin-top:28px}
+    h2{margin:0 0 10px 0}
+    ul{margin:8px 0 0 20px}
+    footer{padding:20px;text-align:center;color:var(--muted);font-size:14px}
+    .muted{color:var(--muted)}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:rgba(125,211,252,0.12);color:var(--accent);text-decoration:none;margin-top:8px}
+    .toc{display:flex;flex-wrap:wrap;gap:8px}
+    @media (max-width:600px){header{padding:12px} .container{padding:12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">RappelBot</div>
+    <nav>
+      <a href="#features">Fonctions</a>
+      <a href="#commands">Commandes</a>
+      <a href="#tos">Terms of Service</a>
+      <a href="#privacy">Privacy Policy</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>RappelBot — Rappels en DM</h1>
+      <p class="lead">Bot Discord simple pour programmer des rappels envoyés en message privé (DM). Ci-dessous : guide d'utilisation, commandes, Terms of Service et politique de confidentialité prêtes à l'emploi.</p>
+      <div class="toc">
+        <a class="btn" href="#commands">Voir les commandes</a>
+        <a class="btn" href="#tos">Terms</a>
+        <a class="btn" href="#privacy">Privacy</a>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2>Fonctions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Rappels en DM</h3>
+          <p class="muted">Envoie des rappels personnels à l'utilisateur via DM à l'heure programmée.</p>
+        </div>
+        <div class="card">
+          <h3>Commandes simples</h3>
+          <p class="muted">Créer, lister, annuler des rappels via des commandes slash ou en message.</p>
+        </div>
+        <div class="card">
+          <h3>Persistant</h3>
+          <p class="muted">Les rappels sont sauvegardés côté serveur (base de données) avec une période de rétention configurable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="commands">
+      <h2>Commandes</h2>
+      <p class="muted">Exemples de commandes (slash commands recommandées) — adaptez selon ton code.</p>
+      <pre>/remindme add 2025-11-05 09:00 "Appeler le client"</pre>
+      <pre>/remindme list</pre>
+      <pre>/remindme cancel 42</pre>
+      <p>Exemple minimal (pseudo-code) :</p>
+      <pre>POST /api/reminders
+{ "user_id": "1234567890", "time": "2025-11-05T09:00:00Z", "text": "Appeler le client" }</pre>
+    </section>
+
+    <section id="tos">
+      <h2>Terms of Service (Conditions d'utilisation)</h2>
+      <p>Dernière mise à jour : <strong>1 novembre 2025</strong></p>
+
+      <h3>1. Acceptation des conditions</h3>
+      <p>En utilisant RappelBot (le "Service"), vous acceptez ces Conditions d'utilisation (les "Conditions"). Si vous n'acceptez pas ces Conditions, n'utilisez pas le Service.</p>
+
+      <h3>2. Description du service</h3>
+      <p>RappelBot permet aux utilisateurs de créer des rappels personnels qui seront envoyés en message privé (DM) sur Discord à l'heure programmée. Le Service peut offrir des commandes slash, des messages prefixés, et une interface web pour gérer les rappels.</p>
+
+      <h3>3. Inscription et accès</h3>
+      <p>Pour utiliser certaines fonctionnalités, vous devez autoriser le bot à vous envoyer des messages privés. Vous êtes responsable de la sécurité de votre compte Discord et de la confidentialité de vos identifiants.</p>
+
+      <h3>4. Règles d'utilisation</h3>
+      <ul>
+        <li>Vous ne devez pas utiliser le Service pour envoyer des contenus illégaux, haineux, pornographiques impliquant des mineurs, ou autrement prohibés.</li>
+        <li>Interdiction d'utiliser le Service pour le spam, l'hameçonnage ou l'envoi massif non sollicité de messages.</li>
+        <li>Vous acceptez de ne pas tenter d'exploiter ou d'attaquer l'infrastructure du Service.</li>
+      </ul>
+
+      <h3>5. Propriété intellectuelle</h3>
+      <p>Tous les droits sur le code, le design et la documentation du Service appartiennent au propriétaire du bot sauf indication contraire. Vous n'obtenez aucun droit de propriété en utilisant le Service, sauf licence d'utilisation limitée.</p>
+
+      <h3>6. Suspension et résiliation</h3>
+      <p>Nous nous réservons le droit de suspendre ou de résilier l'accès d'un utilisateur en cas de violation des présentes Conditions. En cas de résiliation, les données associées peuvent être supprimées selon la politique de rétention.</p>
+
+      <h3>7. Exclusion de garanties et limitation de responsabilité</h3>
+      <p>Le Service est fourni "tel quel". Dans toute la mesure permise par la loi, le propriétaire du Service décline toutes garanties. Nous ne serons pas responsables des dommages indirects, incidents ou conséquents liés à l'utilisation du Service.</p>
+
+      <h3>8. Modifications des Conditions</h3>
+      <p>Nous pouvons modifier ces Conditions ; nous publierons la version mise à jour sur cette page en indiquant la date de mise à jour. L'utilisation continue du Service après modification vaut acceptation des nouvelles Conditions.</p>
+
+      <h3>9. Contact</h3>
+      <p>Pour toute question concernant ces Conditions, contactez : <a href="mailto:brique1009@gmail.com">brique1009@gmail.com</a></p>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy Policy (Politique de confidentialité)</h2>
+      <p>Dernière mise à jour : <strong>1 novembre 2025</strong></p>
+
+      <h3>1. Responsable du traitement</h3>
+      <p>Le responsable du traitement des données est le propriétaire du bot (contact : <a href="mailto:brique1009@gmail.com">brique1009@gmail.com</a>).</p>
+
+      <h3>2. Données collectées</h3>
+      <p>Nous collectons et traitons les données minimales nécessaires pour fournir le service de rappels :</p>
+      <ul>
+        <li><strong>ID Discord</strong> (user id) — pour identifier le destinataire du rappel.</li>
+        <li><strong>Contenu du rappel</strong> (texte) — la note que vous demandez d'envoyer.</li>
+        <li><strong>Horodatage</strong> — date et heure du rappel.</li>
+        <li><strong>Métadonnées</strong> — logs d'exécution, statut du rappel, éventuellement des informations techniques (IP/agent serveur) si pertinentes pour la sécurité.</li>
+      </ul>
+
+      <h3>3. Finalités du traitement</h3>
+      <p>Les données sont utilisées pour :</p>
+      <ul>
+        <li>Créer et envoyer des rappels à l'utilisateur sur Discord.</li>
+        <li>Gérer, synchroniser et conserver l'historique des rappels.</li>
+        <li>Assurer la sécurité et la maintenance du Service.</li>
+      </ul>
+
+      <h3>4. Base légale</h3>
+      <p>La base légale est le consentement et l'exécution d'un service à la demande de l'utilisateur (fourniture du rappel). Vous pouvez retirer votre consentement en supprimant vos rappels et/ou en révoquant l'accès au bot.</p>
+
+      <h3>5. Durée de conservation</h3>
+      <p>Les rappels sont conservés tant que nécessaire pour l'exécution du service. Les logs d'audit et les métadonnées peuvent être conservés jusqu'à 90 jours par défaut (paramétrable).</p>
+
+      <h3>6. Partage et transferts</h3>
+      <p>Nous ne vendons pas vos données. Les données peuvent être accessibles aux prestataires techniques (hébergement, base de données) qui agissent en tant que sous-traitants. Si des transferts hors de l'Espace économique européen ont lieu, des garanties appropriées seront mises en place.</p>
+
+      <h3>7. Sécurité</h3>
+      <p>Nous appliquons des mesures de sécurité raisonnables (chiffrement au repos et en transit, accès restreint, sauvegardes) pour protéger les données. Cependant, aucune méthode de transmission ou de stockage n'est totalement sécurisée.</p>
+
+      <h3>8. Vos droits</h3>
+      <p>Selon la législation applicable, vous pouvez demander l'accès, la rectification, la suppression, la limitation du traitement, ou la portabilité de vos données. Pour exercer ces droits, contactez : <a href="mailto:brique1009@gmail.com">brique1009@gmail.com</a></p>
+
+      <h3>9. Cookies</h3>
+      <p>Le site peut utiliser des cookies techniques pour la session et l'analytics. Vous pouvez configurer votre navigateur pour refuser les cookies, ce qui peut altérer certaines fonctions.</p>
+
+      <h3>10. Modifications</h3>
+      <p>Nous pouvons mettre à jour cette Politique de confidentialité ; la date de mise à jour sera modifiée en conséquence. L'utilisation continue du Service après modification vaut acceptation de la nouvelle politique.</p>
+    </section>
+
+    <section id="deploy">
+      <h2>Déployer ce site</h2>
+      <p class="muted">Pour utiliser ce site :</p>
+      <ol>
+        <li>Sauvegarde ce fichier en <code>index.html</code>.</li>
+        <li>Ouvre-le localement dans ton navigateur pour vérifier le rendu.</li>
+        <li>Pour le publier gratuitement : crée un dépôt GitHub et active <strong>GitHub Pages</strong> ou pousse le repo et connecte-le à <strong>Netlify</strong> ou <strong>Vercel</strong>.</li>
+      </ol>
+      <p>Si tu veux, je peux générer une version adaptée (ex : traduction, mentions légales spécifiques à un pays, ou ajout d'un formulaire de contact).</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 RappelBot — <span class="muted">Contact : <a href="mailto:brique1009@gmail.com">brique1009@gmail.com</a></span>
+  </footer>
+</body>
+</html>
